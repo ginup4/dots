@@ -20,6 +20,8 @@ set ignorecase
 set smartcase
 set hlsearch
 
+nnoremap s :nohlsearch<CR>
+
 set backspace=indent,eol,start
 
 set history=100
@@ -30,6 +32,8 @@ augroup numbertoggle
     autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
     autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
 augroup END
+
+set scrolloff=5
 
 let loaded_matchparen = 1
 
@@ -48,4 +52,5 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-set scrolloff=5
+nnoremap <S-k> <C-u>zz
+nnoremap <S-j> <C-d>zz
